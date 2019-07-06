@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using WarGame.Core.HashSetDeck;
 using WarGame.Model;
 
 namespace WarGame.Core
@@ -9,18 +8,20 @@ namespace WarGame.Core
 	{
 		private readonly IDisplay _display;
 		private readonly IStatCollector _statCollector;
-		public GameManager(IDisplay display, IStatCollector statCollector)
+		private readonly IDeck _baseDeck;
+
+		public GameManager(IDeck baseDeck, IDisplay display, IStatCollector statCollector)
 		{
 			_display = display;
 			_statCollector = statCollector;
+			_baseDeck = baseDeck;
 		}
 
 		public void StartSimulation()
 		{
-			IDeck<Card> standardDeck = new Deck();
 			_display.DisplayMessage("----------------------- Welcome to the War Card Game Simulator -----------------------\n");
 
-			var splitDecks = standardDeck.Split();
+			var splitDecks = _baseDeck.Split();
 
 			int winner = PlayWar(splitDecks.Item1, splitDecks.Item2);
 
@@ -33,7 +34,7 @@ namespace WarGame.Core
 			Console.ReadKey();
 		}
 
-		private int PlayWar(IDeck<Card> deckOne, IDeck<Card> deckTwo)
+		private int PlayWar(IDeck deckOne, IDeck deckTwo)
 		{
 			deckOne.Shuffle();
 			deckTwo.Shuffle();
@@ -87,7 +88,7 @@ namespace WarGame.Core
 			}
 		}
 
-		private Tuple<int, List<Card>> War(IDeck<Card> deckOne, IDeck<Card> deckTwo, Card playerOneCard, Card playerTwoCard)
+		private Tuple<int, List<Card>> War(IDeck deckOne, IDeck deckTwo, Card playerOneCard, Card playerTwoCard)
 		{
 			_display.DisplayMessage($"War between Player 1's {playerOneCard} and Player 2's {playerTwoCard}!");
 			List<Card> cardsUpForStake = new List<Card> { playerOneCard, playerTwoCard };

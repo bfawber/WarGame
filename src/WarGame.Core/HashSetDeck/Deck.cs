@@ -5,7 +5,7 @@ using WarGame.Model;
 
 namespace WarGame.Core.HashSetDeck
 {
-	public class Deck : IDeck<Card>
+	public class Deck : IDeck
 	{
 		private HashSet<Card> _cards = new HashSet<Card>();
 		private Queue<Card> _cardOrder = new Queue<Card>();
@@ -63,7 +63,7 @@ namespace WarGame.Core.HashSetDeck
 			}
 		}
 
-		public Tuple<IDeck<Card>, IDeck<Card>> Split()
+		public Tuple<IDeck, IDeck> Split()
 		{
 			HashSet<Card> deckOne = new HashSet<Card>(_cards);
 			int count = deckOne.Count;
@@ -78,7 +78,7 @@ namespace WarGame.Core.HashSetDeck
 				deckTwo.Add(deckOneArray[index]);
 			}
 
-			return new Tuple<IDeck<Card>, IDeck<Card>>(new Deck(deckOne), new Deck(deckTwo));
+			return new Tuple<IDeck, IDeck>(new Deck(deckOne), new Deck(deckTwo));
 		}
 
 		private void InitializeBaseDeck()

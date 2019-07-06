@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="src\WarGame.Model\WarGame.Model.csproj" />
-    <ProjectReference Include="src\WarGame.Core\WarGame.Core.csproj" />
+    <ProjectReference Include="..\src\WarGame.Model\WarGame.Model.csproj" />
+    <ProjectReference Include="..\src\WarGame.Core\WarGame.Core.csproj" />
   </ItemGroup>
 
 </Project>

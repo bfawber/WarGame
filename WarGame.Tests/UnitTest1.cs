@@ -11,7 +11,7 @@ namespace WarGame.Tests
 		[Fact]
 		public void InitializeBaseDeck_PopulatesAllCardsInAStandardDeck_WhenInitialized()
 		{
-			IDeck<Card> deck = new Deck();
+			IDeck deck = new Deck();
 
 			Assert.Equal(52, deck.Count());
 		}
@@ -19,7 +19,7 @@ namespace WarGame.Tests
 		[Fact]
 		public void Split_SplitsCardsEvenly_BetweenBothDecks()
 		{
-			IDeck<Card> deck = new Deck();
+			IDeck deck = new Deck();
 
 			var splitDecks = deck.Split();
 

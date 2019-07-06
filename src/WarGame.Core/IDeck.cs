@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using WarGame.Model;
 
 namespace WarGame.Core
 {
@@ -8,7 +7,7 @@ namespace WarGame.Core
 	/// Actions all decks should be able to do.
 	/// </summary>
 	/// <typeparam name="T">The card type</typeparam>
-	public interface IDeck<T>
+	public interface IDeck
 	{
 		/// <summary>
 		/// Shuffles the cards in the deck into a "random" order.
@@ -20,25 +19,25 @@ namespace WarGame.Core
 		/// Splits the deck into two equally sized decks
 		/// </summary>
 		/// <returns>Two decks of equal size</returns>
-		Tuple<IDeck<T>, IDeck<T>> Split();
+		Tuple<IDeck, IDeck> Split();
 
 		/// <summary>
 		/// Gets the next card in the deck
 		/// </summary>
 		/// <returns>The next card in the deck</returns>
-		T GetNext();
+		Card GetNext();
 
 		/// <summary>
 		/// Adds a card to the deck
 		/// </summary>
 		/// <param name="Card">The card to add</param>
-		void Add(T card);
+		void Add(Card card);
 
 		/// <summary>
 		/// Removes a card from the deck
 		/// </summary>
 		/// <param name="Card">The card to remove</param>
-		void Remove(T card);
+		void Remove(Card card);
 
 		int Count();
 	}

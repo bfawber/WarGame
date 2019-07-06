@@ -10,7 +10,7 @@ namespace WarGame
 	{
 		static void Main(string[] args)
 		{
-			GameManager gameManager = new GameManager(new ConsoleDisplay(), new WarStatCollector());
+			GameManager gameManager = new GameManager(new Deck(), new ConsoleDisplay(), new WarStatCollector());
 			gameManager.StartSimulation();
 		}		
 	}

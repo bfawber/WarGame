@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WarGame.Model;
+﻿using WarGame.Model;
 
 namespace WarGame.Core
 {
