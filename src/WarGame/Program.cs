@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using WarGame.Core;
+﻿using WarGame.Core;
 using WarGame.Core.HashSetDeck;
-using WarGame.Model;
 
 namespace WarGame
 {
