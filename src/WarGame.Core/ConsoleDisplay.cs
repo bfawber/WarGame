@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using WarGame.Model;
 
 namespace WarGame.Core
@@ -27,6 +28,11 @@ namespace WarGame.Core
 		public void DisplayMessage(string message)
 		{
 			Console.WriteLine(message);
+		}
+
+		public void DisplayWarWon(int player, IEnumerable<Card> cardsAtStake)
+		{
+			Console.WriteLine($"Player {player} won the war and got all these cards at stake {string.Join(",", cardsAtStake)}");
 		}
 	}
 }

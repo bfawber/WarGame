@@ -115,6 +115,7 @@ namespace WarGame.Core
 				if (playerOneCard.Rank > playerTwoCard.Rank)
 				{
 					_display.DisplayBattleWon(1, playerOneCard, playerTwoCard);
+					_display.DisplayWarWon(1, cardsUpForStake);
 					_statCollector.RecordWar(1);
 					_statCollector.RecordBattleWon(1, playerOneCard, playerTwoCard);
 					return new Tuple<int, List<Card>>(1, cardsUpForStake);
@@ -122,6 +123,7 @@ namespace WarGame.Core
 				else if (playerOneCard.Rank < playerTwoCard.Rank)
 				{
 					_display.DisplayBattleWon(2, playerTwoCard, playerOneCard);
+					_display.DisplayWarWon(2, cardsUpForStake);
 					_statCollector.RecordWar(2);
 					_statCollector.RecordBattleWon(2, playerTwoCard, playerOneCard);
 					return new Tuple<int, List<Card>>(2, cardsUpForStake);
