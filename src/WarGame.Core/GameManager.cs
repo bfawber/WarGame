@@ -10,11 +10,14 @@ namespace WarGame.Core
 		private readonly IStatCollector _statCollector;
 		private readonly IDeck _baseDeck;
 
-		public GameManager(IDeck baseDeck, IDisplay display, IStatCollector statCollector)
+		private readonly WarGameOptions _gameOptions;
+
+		public GameManager(IDeck baseDeck, IDisplay display, IStatCollector statCollector, WarGameOptions gameOptions)
 		{
 			_display = display;
 			_statCollector = statCollector;
 			_baseDeck = baseDeck;
+			_gameOptions = gameOptions;
 		}
 
 		public void StartSimulation()
@@ -84,6 +87,12 @@ namespace WarGame.Core
 					deckTwo.Add(playerOneCard);
 					deckOne.Remove(playerOneCard);
 					if (deckOne.Count() < 1) return 2;
+				}
+
+				if (_gameOptions.Interactive)
+				{
+					_display.DisplayMessage("Press any key for next battle...");
+					Console.ReadKey();
 				}
 			}
 		}
