@@ -1,7 +1,8 @@
 {
   "profiles": {
     "WarGame": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "--games 10"
     }
   }
 }
