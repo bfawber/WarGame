@@ -39,6 +39,10 @@ namespace WarGame.Core
 		/// <param name="Card">The card to remove</param>
 		void Remove(Card card);
 
+		/// <summary>
+		/// Get's the count of cards in the deck.
+		/// </summary>
+		/// <returns>The number of cards in the deck</returns>
 		int Count();
 	}
 }
