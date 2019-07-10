@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WarGame</name>
+    </assembly>
+    <members>
+        <member name="M:WarGame.Program.Main(System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Plays the card game war.
+            </summary>
+            <param name="interactive">Wait for input between each battle</param>
+            <param name="games">The number of games to play</param>
+            <param name="compoundStats">Compound the stats for all games, rather than reset each game.</param>
+        </member>
+    </members>
+</doc>
